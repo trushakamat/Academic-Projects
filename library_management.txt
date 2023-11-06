@@ -1,0 +1,122 @@
+﻿MINI PROJECT
+Library Management
+
+
+#include<iostream> using namespace std; #include<conio.h> #include<string.h> class Library
+{
+private:
+int member_id[5]; public:
+void search_student();
+};
+void Library::search_student()
+{
+int memberid[10] = { 1000,1001,1002,1003,1004,1005,6,7,1008,1009 };
+int num,index = 0;
+cout << "*******Library Management*******";
+std::cout << "\nThis library has 10 students with IDS from 1000-1009."; cout << "\nCheck if your member ID exists :";
+std::cout << "\nEnter Member ID to be searched:"; std::cin >> num;
+for (int i = 0; i < num; i++)
+{
+if (memberid[i] == num)
+{
+index = i; break;
+}
+}
+std::cout << "\nStudent record exists"; std::cout;
+}
+class student
+{
+
+public:
+void search_rollno();
+};
+void student::search_rollno()
+{
+int rollno[20] = { 1,2,3,4,5,6,7,78,89,11,12,13,44,15,16,77,18,29,20 };
+int search,index = 0;
+cout << "\nThe library keeps a record of the student's roll no.s who have enrolled for a card:";
+cout << "\n Check availability from Roll No :1 to 20 "; cout << "\nEnter rollno. to be searched:";
+cin >> search;
+for (int i = 0; i < 20; i++)
+{
+if (search == rollno[i])
+{
+index = i;
+
+break;
+}
+}
+cout << "\n Student roll no exits ";
+}
+class Book:public Library
+{
+public:
+void search_edition();
+};
+void Book::search_edition()
+{
+int edition[10] = { 2000, 2001, 2002,2004,2005,2006,2007,2008,2010,2009 };
+int num;
+cout << "\n The library keeps year wise editions of a book from 2000-2010"; cout << "\n Log into see if the edition of your book is available :";
+cout << "\nEnter edition to be searched:"; cin >> num;
+for (int i = 0; i < 10; i++)
+{
+if (num == edition[i])
+{
+break;
+}
+}
+cout << "\nEdition of the book exists in the library";
+}
+class IssueMaintenance:public student
+{
+private:
+int no_of_days; public:
+void fine();
+};
+void IssueMaintenance::fine()
+{
+cout << "\nThe library gives notices if your book's due date is close, your book is due or if there is a fine applicable.";
+cout << "\nEnter number of days since book was issued: "; cin >> no_of_days;
+if (no_of_days == 15)
+cout << "\nIt's time to return your book"; else if(no_of_days < 15)
+cout << "\nThere is still some time until you return";
+
+else
+}
+
+cout << "\nFine is applicable";
+
+class Accounts:public Library
+{
+private:
+int no_of_booksbought; double cost;
+double total = 0; public:
+void calculate();
+};
+void Accounts::calculate()
+
+{
+int num;
+cout << "\nThe library sends a bill to the accounts division every month: "; cout << "\nEnter the number of books bought this month :";
+cin >> no_of_booksbought;
+for (int i = 0; i < no_of_booksbought; i++)
+{
+cout << "\nEnter cost of Book " << (i + 1) << ":"; cin >> cost;
+total = total + cost;
+}
+cout << "\nTotal bill from the library to the accounts section :" <<total;
+}
+int main()
+{
+Library l; l.search_student(); student s; s.search_rollno(); Book b; b.search_edition(); IssueMaintenance i; i.fine();
+Accounts c; c.calculate();
+_getch(); return 0;
+}
+
+student
+Output:
+
+
+Student\
+
